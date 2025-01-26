@@ -1,0 +1,29 @@
+Fishsauce.py:
+import sublime
+import sublime_plugin
+import os
+
+class ManchesterIsRedCommand(sublime_plugin.WindowCommand):
+    def run(self, **mu):
+        manchester = self.window.active_view().file_name()
+        _, united = os.path.splitext(manchester)
+        if united == ".py":  
+            manucian = f'python "{manchester}" <input.in> output.out'
+        else:
+            manucian = f'g++ -std=c++17 "{manchester}" -o "{os.path.splitext(manchester)[0]}.exe" && "{os.path.splitext(manchester)[0]}.exe" < input.in > output.out'
+        self.window.run_command("exec", {
+            "shell_cmd": manucian,
+            "working_dir": mu.get("working_dir", os.path.dirname(manchester))
+        })
+Fishsauce.sublime_text:
+{
+    "target": "manchester_is_red",
+    "selector": "source.python, source.c++",
+    "working_dir": "$file_path",
+    "variables": {
+        "input_file": "input.in",
+        "output_file": "output.out",
+    },
+    "word_wrap": true
+}
+
