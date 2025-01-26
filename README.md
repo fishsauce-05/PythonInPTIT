@@ -1,6 +1,6 @@
 <span style="color: blue; font-size: 24px;"> Welcom to Fishsauce's show 😉</span>
 ---
-Đây là nơi lưu giữ đống code (chép từ ChatGPT) của mình trong [**CODE PTIT**](code.ptit.edu.vn) 
+Đây là nơi lưu giữ đống code (chép từ ChatGPT) của mình trong [**CODE PTIT**](https://code.ptit.edu.vn/login) 
 
 Tuy code ngu nhưng [**Ngô Mạnh**](https://www.facebook.com/hi.fishsauce) được cái chép code giỏi
 
