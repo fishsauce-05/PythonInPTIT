@@ -1,6 +1,6 @@
 class Solution:
 	def solve(self):
-		return "Tao chep code"
+		return "Welcome to python."
 
 Fishsauce = Solution()
 print(Fishsauce.solve())
