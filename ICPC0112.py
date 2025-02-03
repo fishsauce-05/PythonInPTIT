@@ -1,17 +1,16 @@
-from collections import defaultdict as df
+MAX = int(1e6+1)
 
-prime_numbers = df(lambda: True)
-prime_numbers[0] = prime_numbers[1] = False
-for prime in range(1001):
-	if prime_numbers[prime]:
-		for sq_prime in range(prime*prime, 1000001, prime):
-			prime_numbers[sq_prime] = False
+prime = [1]*int(MAX)
+prime[0] = prime[1] = 0
+for i in range(1000):
+    if prime[i]:
+        for j in range(i*i, MAX, i):
+            prime[j] = 0
 
-t = int(input())
-for cases in range(t):
-	num = int(input())
-	cnt = 0
-	for i in range(5, num-5):
-		if prime_numbers[i] and prime_numbers[i+2] and prime_numbers[i+6] or prime_numbers[i] and prime_numbers[i+4] and prime_numbers[i+6]:
-			cnt += 1
-	print(cnt)
+for case in range(int(input())):
+    cnt = 0
+    for i in range(int(input())-5):
+        if prime[i] and prime[i+6]:
+            if prime[i+2] or prime[i+4]:
+                cnt += 1
+    print(cnt)

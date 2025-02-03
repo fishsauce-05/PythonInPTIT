@@ -1,8 +1,7 @@
-t = int(input())
-for cases in range(t):
+for cases in range(int(input())):
     n = int(input())
-    nums = [int(num) for num in input().split()]    
-    min_st = min_nd = min_rd = float("inf")
+    nums = list(map(int, input().split()))   
+    min_st = min_nd = min_rd = float('inf')
     for num in nums:
         if num < min_st:
             min_rd = min_nd

@@ -5,4 +5,6 @@ for cases in range(t):
     lst = nums[:]
     for i in range(n):
         nums[i] = lst[(i+k)%n]
-    print(" ".join(nums))
+    for num in nums:
+        print(num, end = " ")
+    print()
