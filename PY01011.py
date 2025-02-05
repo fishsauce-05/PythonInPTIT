@@ -1,14 +1,20 @@
-class Solution:
-	def check(self, strN):
-		digits = ['0', '2', '4', '6', '8']:
-		for chrN in strN:
-			if chrN not in digits:
-				return False
-		return len(strN) % 2 == 1 
-	def solve(self):
-		print("Tao chep code")
+a = []
+b = ['0', '2', '4', '6', '8']
+def Try(s) :
+    k = list(s)
+    k.reverse()
+    k = int(s + ''.join(k))
+    global a
+    a = a + [k]
+    if(len(s) != 3) :
+        for i in b :
+            Try(s + i)
+for i in range(1, 5) : Try(b[i])
+a.sort()
 t = int(input())
-for cases in range(t):
-	strN = input()
-	Fishsauce = Solution()
-	print(' '.Fishsauce.solve(strN))
+for i in range(t) :
+    n = int(input())
+    for j in a :
+        if j < n : print(j, end = " ")
+        else : break
+    print()

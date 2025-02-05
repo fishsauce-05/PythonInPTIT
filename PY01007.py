@@ -1,10 +1,13 @@
 import math
 class Solution:
 	def solve(self, n, x, m):
-		return math.ceil(math.log(m/n)) / math.log(1+x/100)
+		x /= 100
+		s = math.log(m/n, 1+x)
+		if s != int(s):
+			s += 1
+		return int(s)
 
-t = int(input())
-for cases in range(t):
-	n, x, m = map(float, input().split(' '))
-	Fishsauce = Solution()
+Fishsauce = Solution()
+for case in range(int(input())):
+	n, x, m = map(float, input().split())
 	print(Fishsauce.solve(n, x, m))

@@ -1,10 +1,10 @@
+from sys import stdin
+class Solution:
+    def solve(self, n, nums):
+        sumN = int(n*(n+1)/2)
+        return sumN - sum(nums)
+
+Fishsauce = Solution()
 n = int(input())
-nums = []
-
-for _ in range(n - 1):
-    nums.append(int(input().strip()))
-
-sum_of_numbers = sum(nums)
-expected_sum = n * (n + 1) // 2
-missing_number = expected_sum - sum_of_numbers
-print(missing_number)
+nums = list(map(int, stdin.read().split('\n')))
+print(Fishsauce.solve(n, nums))

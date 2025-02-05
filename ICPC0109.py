@@ -1,7 +1,23 @@
-def solve():
-    n = int(input())
-    nums = sorted(list(map(int, input().split())))
-    print(sum(nums) if n == 1 or n == 2 else sum(nums[0:3]))
+MAX = 100000
+
+def Print3Smallest(arr, n):
+    firstmin = MAX
+    secmin = MAX
+    thirdmin = MAX
+
+    for i in range(0, n):
+        if arr[i] < firstmin:
+            thirdmin = secmin
+            secmin = firstmin
+            firstmin = arr[i]
+        elif arr[i] < secmin:
+            thirdmin = secmin
+            secmin = arr[i]
+        elif arr[i] < thirdmin:
+            thirdmin = arr[i]
+    print(firstmin+ secmin + thirdmin)
 
 for case in range(int(input())):
-    solve()
+    n = int(input())
+    arr = list(map(int, input().split()))
+    Print3Smallest(arr, n)
