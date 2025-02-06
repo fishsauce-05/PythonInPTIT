@@ -1,5 +1,6 @@
 from datetime import datetime
 
+print('h, m, s:', end=" ")
 h, m, s = map(int, input().split(' '))
 angle_time = h*30 + m*0.5 + s*(0.5/60)
 if angle_time > 180:

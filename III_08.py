@@ -5,6 +5,8 @@ class Solution:
         return sumN - sum(nums)
 
 Fishsauce = Solution()
-n = int(input())
-nums = list(map(int, stdin.read().split('\n')))
+n = int(stdin.readline().strip())
+nums = []
+for _ in range(n-1):
+    nums.append(int(stdin.readline().strip()))
 print(Fishsauce.solve(n, nums))
