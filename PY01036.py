@@ -1,13 +1,11 @@
-class Solution:
-	def __init__(self):
-		self.S = [1, 1/2]
-		for i in range(3, 10**4-1):
-			self.S.append(1/i + self.S[i-3])
-	def solve(self, n):
-		return self.S[n-1]
-		
-Fishsauce = Solution()
+'''
+Fishsauce
+'''
 for case in range(int(input())):
-	num = int(input())
-	number = Fishsauce.solve(num)
-	print(f"{number:.6f}")
+	n = int(input())
+	res = 0
+	k = 1 if n % 2 == 1 else 2
+
+	for i in range(k, n+1, 2):
+		res += 1/i
+	print("{:.6f}".format(res))

@@ -12,5 +12,9 @@ class Solution:
 Fishsauce = Solution()
 n, k = map(int, input().split())
 lst = Fishsauce.solve(n, k)
+cnt = 0
 for ele in lst:
 	print(ele, end = " ")
+	cnt += 1
+	if cnt % 10 == 0:
+		print()

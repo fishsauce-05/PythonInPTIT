@@ -9,11 +9,12 @@ class Solution:
             idx = self.strP.find(xauS[i])
             lstS.append(self.strP[(idx+k)%28])
         lstS.reverse()
-        return lstS
+        strRes = ''.join(lstS)
+        return strRes
     
 Fishsauce = Solution()
 while True:
-    inputs = [x for x in input().split(' ')]
+    inputs = [x for x in input().split()]
     if inputs[0] == '0':
         break
     k = int(inputs[0])

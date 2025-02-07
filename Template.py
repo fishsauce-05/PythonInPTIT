@@ -1,2 +1,7 @@
-num = 1
-print(int(str(num)[::-1]))
+class Solution:
+	def solve(self):
+		return "Tao chep code"
+		
+Fishsauce = Solution()
+ans = Fishsauce.solve()
+print(ans)
