@@ -1,19 +1,30 @@
-from math import log2
+class Solution:
+    def __init__(self):
+        self.base = {
+            10: 'A',
+            11: 'B',
+            12: 'C',
+            13: 'D',
+            14: 'E', 
+            15: 'F'
+        }
+    def solve(self, base, np):
+        num = 0
+        t = 0
+        while np:
+            num += np%10 * 2**t
+            np //= 10
+            t += 1
+        res = str()
+        while num:
+            bas = num % base
+            if bas >= 10:
+                bas = self.base[bas]
+            res += str(bas)
+            num //= base
+        return res[::-1]
 
-BASE = '0123456789ABCDEF'
-
-for t in range(int(input())):
-    base = int(log2(int(input())))
-    num = input()
-    while len(num) % base:
-        num = '0' + num
-    pow = [1]
-    for i in range(1, base):
-        pow = [pow[0]*2] + pow
-    res = ''
-    for i in range(0, len(num), base):
-        e = 0
-        for j in range(i, i+base):
-            e += int(num[j])*pow[j-i]
-        res += BASE[e]
-    print(res)
+Fishsauce = Solution()
+for case in range(int(input())):
+    ans = Fishsauce.solve(int(input()), int(input()))
+    print(ans)
