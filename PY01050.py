@@ -1,35 +1,13 @@
-from collections import deque
-class Solution:
-	def __init__(self):
-		self.orgin = "ABC"
-		self.lst = []
-	def solve(self, n):
+'''
+Fishsauce
+'''
 
-		def check(strXau):
-			cntA = cntB = cntC = 0
-			for xau in strXau:
-				if xau == 'A':
-					cntA += 1
-				elif xau == 'B':
-					cntB += 1
-				else:
-					cntC += 1
-			return cntA and cntB and cntC and cntA <= cntB <= cntC
+def Try(s, n, a, b, c) :
+	if len(s) == n and a <= b and b <= c and a > 0 : print(s)
+	if len(s) < n :
+		Try(s + "A", n, a + 1, b, c)
+		Try(s + "B", n, a, b + 1, c)
+		Try(s + "C", n, a, b, c + 1)
 
-		q = deque([x for x in self.orgin])
-		while q:
-			cur = q.popleft()
-			if len(cur) == n:
-				break
-			for c in self.orgin:
-				curXau = cur + c
-				q.append(curXau)
-				if check(curXau):
-					self.lst.append(curXau)
-		return self.lst						
-
-		
-Fishsauce = Solution()
-ans = Fishsauce.solve(int(input()))
-for res in ans:
-	print(res)
+n = int(input())
+for i in range(3, n + 1) : Try("", i, 0, 0, 0)

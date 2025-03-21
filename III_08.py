@@ -1,15 +1,13 @@
 '''
 Fishsauce
 '''
-from sys import stdin
-def main():
-    n = int(stdin.readline())
-    sumN = n*(n+1) // 2
-    cur = 0
-    for _ in range(n-1):
-        cur += int(stdin.readline())
-    num = int(sumN - cur)
-    print(f"{num}")
-
-if __name__ == "__main__":
-    main() 
+lst = []
+for case in range(int(input())-1):
+    lst.append(int(input()))
+a = min(lst)
+b = max(lst)
+mark = set(x for x in lst)
+for i in range(a, b):
+    if i not in mark:
+        print(i)
+        break
